@@ -1,0 +1,16 @@
+[window]
+opacity = 0.8
+decorations = "None"
+dimensions = { columns = 80, lines =  24}
+
+[colors]
+primary = { background = "#0d0c0c"}
+
+[keyboard]
+bindings = [
+{ key = "F11", action = "ToggleFullscreen"},
+{ key = "Q", mods = "Control", action = "Quit"},
+{ key = "V", mods = "Control", action = "Paste"},
+{ key = "C", mods = "Control", action = "Copy"},
+{ key = "T", mods = "Control", action = "CreateNewWindow"}
+]

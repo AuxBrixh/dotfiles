@@ -1,0 +1,39 @@
+format = """
+[AuxBrixh](#a6e3a1 bold) \
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$cmd_duration\
+$golang\
+$character"""
+
+[character]
+success_symbol = "[](#a6e3a1 bold) ❯" 
+error_symbol = "[✖](#f38ba8 bold) ❯"        
+vicmd_symbol = "[](#f9e2af)"  
+
+[directory]
+home_symbol = "/home"
+repo_root_format = "[$before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$path]($style) [$read_only]($read_only_style)"
+style = "fg:#80deea bold"
+
+[git_status]
+format = "($status)"                   
+style = "fg:#F9E2AF"                     
+conflicted = "✗"                         
+ahead = "⇡${count}"                       
+behind = "⇣${count}"                     
+untracked = "?${count}"                   
+staged = "+${count}"                      
+modified = "!${count}"  
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\)'
+style = "bright-black"
+
+[cmd_duration]
+min_time = 1
+format = "took [$duration]($style) "
+style = "bold purple"
+show_milliseconds = true
