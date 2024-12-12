@@ -1,20 +1,30 @@
 format = """
-[AuxBrixh](#a6e3a1 bold) \
+[☢](bold yellow) [](#66e637 bold) $username in \
 $directory\
 $git_branch\
 $git_state\
 $git_status\
-$cmd_duration\
 $golang\
+$line_break\
 $character"""
 
+right_format = "$cmd_duration"
+
+[username]
+style_user = '#a6e3a1 bold'
+style_root = 'black bold'
+format = '[$user]($style)'
+show_always = true
+aliases = { "siuesss" = "AuxBrixh" }
+
 [character]
-success_symbol = "[](#a6e3a1 bold) ❯" 
-error_symbol = "[✖](#f38ba8 bold) ❯"        
-vicmd_symbol = "[](#f9e2af)"  
+success_symbol = "[└───>](#a6e3a1 bold)" 
+error_symbol = "[└───>](#f38ba8 bold)"        
+vimcmd_symbol = "[](#f9e2af)" 
 
 [directory]
-home_symbol = "/home"
+truncation_length = 2
+home_symbol = "📁home"
 repo_root_format = "[$before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$path]($style) [$read_only]($read_only_style)"
 style = "fg:#80deea bold"
 
@@ -34,6 +44,6 @@ style = "bright-black"
 
 [cmd_duration]
 min_time = 1
-format = "took [$duration]($style) "
+format = "[$duration]($style) "
 style = "bold purple"
 show_milliseconds = true
