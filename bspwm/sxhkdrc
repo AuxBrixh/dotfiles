@@ -1,0 +1,27 @@
+# Launch terminal
+super + Return
+    alacritty
+
+# Close window
+super + q
+    bspc node -c
+
+# Switch workspace
+super + {1-9}
+    bspc desktop -f ^{1-9}
+
+# Move window to another workspace
+super + shift + {1-9}
+    bspc node -d ^{1-9}
+
+# Manage brightness
+super + ctrl + {Right, Left}
+    ~/.config/sxhkd/script/Brightness {up, down}
+
+# manage voice
+super + ctrl + {Up, Down, Return}
+    ~/.config/sxhkd/script/Volume {--inc, --dec, --toggle}
+
+# open file manager 
+super + e
+    thunar

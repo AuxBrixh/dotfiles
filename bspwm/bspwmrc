@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# Terminate already running instances
+pkill -x sxhkd
+
+# Start sxhkd
+sxhkd &
+
+# Set wallpaper
+nitrogen --restore &
+
+# Set panel (polybar example)
+polybar example &
+
+# Start compositor
+picom &
+
+dunst & 
+
+# Configure bspwm behavior
+bspc monitor -d 1 2 3 4 5 6 7 8 9
