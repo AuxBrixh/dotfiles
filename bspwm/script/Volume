@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 # Notification command
 notify_cmd='dunstify -u low -h string:x-dunst-stack-tag:obvolume'

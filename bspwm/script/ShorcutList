@@ -1,0 +1,80 @@
+#!/usr/bin/env zsh
+
+# Daftar shortcut
+shortcuts=$(cat <<EOF
+# Launch Applications
+super + Return    -> alacritty
+super + b         -> google-chrome
+super + e         -> thunar
+super + d         -> rofi -show drun
+
+# Close window
+super + q         -> Close current window
+
+# Split window
+super + shift + h -> Split west
+super + shift + j -> Split south
+super + shift + k -> Split north
+super + shift + l -> Split east
+
+# Move window
+super + ctrl + h  -> Move window west
+super + ctrl + j  -> Move window south
+super + ctrl + k  -> Move window north
+super + ctrl + l  -> Move window east
+
+# Toggle floating mode
+super + space     -> Toggle floating mode
+
+# Switch workspace
+super + [1-9]     -> Switch to workspace [1-9]
+
+# Move window to workspace
+super + shift + [1-9] -> Move window to workspace [1-9]
+
+# Manage brightness
+super + Right     -> Increase brightness
+super + Left      -> Decrease brightness
+
+# Manage volume
+super + Up        -> Increase volume
+super + Down      -> Decrease volume
+super + ctrl + Return -> Toggle mute
+
+# Polybar controls
+super + a + h     -> Hide Polybar
+super + a + s     -> Show Polybar
+super + a + r     -> Restart Polybar
+
+# System controls
+super + ctrl + shift + q -> Quit bspwm
+super + ctrl + shift + r -> Reboot system
+super + ctrl + shift + s -> Shutdown system
+
+# Fullscreen
+super + f         -> Toggle fullscreen
+
+# Focus window
+super + h         -> Focus west
+super + j         -> Focus south
+super + k         -> Focus north
+super + l         -> Focus east
+
+# Resize window
+super + alt + h   -> Resize west
+super + alt + j   -> Resize south
+super + alt + k   -> Resize north
+super + alt + l   -> Resize east
+
+# Toggle monocle mode
+super + m         -> Toggle monocle mode
+EOF
+)
+
+# Tampilkan menu di Rofi
+selected=$(echo "$shortcuts" | rofi -dmenu -i -p "Shortcuts")
+
+# Tampilkan hasil yang dipilih
+if [ -n "$selected" ]; then
+    notify-send "Shortcut Info" "$selected"
+fi

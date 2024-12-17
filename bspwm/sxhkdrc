@@ -1,27 +1,65 @@
-# Launch terminal
-super + Return
-    alacritty
+# Launch Applications
+super + {Return, b, e, d}
+    {alacritty, google-chrome, thunar, rofi -show drun}
 
 # Close window
 super + q
     bspc node -c
 
+# Split window
+super + shift + {h,j,k,l}
+    bspc node -p {west,south,north,east}
+
+# Move window
+super + ctrl + {h,j,k,l}
+    bspc node -s {west,south,north,east}
+
+# Toggle floating mode
+super + space
+    bspc node -t floating
+
 # Switch workspace
 super + {1-9}
     bspc desktop -f ^{1-9}
 
-# Move window to another workspace
+# Move window to workspace
 super + shift + {1-9}
     bspc node -d ^{1-9}
 
 # Manage brightness
-super + ctrl + {Right, Left}
+super + {Right, Left}
     ~/.config/sxhkd/script/Brightness {up, down}
 
-# manage voice
-super + ctrl + {Up, Down, Return}
-    ~/.config/sxhkd/script/Volume {--inc, --dec, --toggle}
+# Manage volume
+super + {Up, Down}
+    ~/.config/sxhkd/script/Volume { --inc, --dec}
+super + ctrl + Return
+    ~/.config/sxhkd/script/Volume --toggle
 
-# open file manager 
-super + e
-    thunar
+# Polybar controls
+super + a + {h, s, r}
+    ~/.config/sxhkd/script/HideBar {-h,-s,-r}
+
+# System controls
+super + ctrl + shift + q
+    bspc quit
+super + ctrl + shift + r
+    systemctl reboot
+super + ctrl + shift + s
+    systemctl poweroff
+
+# Fullscreen
+super + f
+    bspc node -t fullscreen
+
+# Focus window
+super + {h,j,k,l}
+    bspc node -f {west,south,north,east}
+
+# Resize window
+super + alt + {h,j,k,l}
+    bspc node -z {20 0, 0 20, -20 0, 0 -20}
+
+# Toggle monocle mode
+super + m
+    bspc desktop -l next

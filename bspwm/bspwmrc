@@ -18,7 +18,7 @@ picom &
 dunst & 
 
 # Configure bspwm behavior
-bspc monitor -d 1 2 3 4 5 6 7 8 9
+bspc monitor -d 1 2 3 4 5
 
 # detect full screen
 bspc subscribe node | while read -r event; do

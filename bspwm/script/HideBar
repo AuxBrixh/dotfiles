@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+case "$1" in
+    -h)
+        # Hide Polybar
+        polybar-msg cmd hide
+        ;;
+    -s)
+        # Show Polybar
+        polybar-msg cmd show
+        ;;
+    -r)
+        # Restart Polybar
+        polybar-msg cmd restart
+        ;;
+esac
