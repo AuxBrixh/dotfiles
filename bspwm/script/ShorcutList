@@ -42,9 +42,9 @@ super + Down      -> Decrease volume
 super + ctrl + Return -> Toggle mute
 
 # Polybar controls
-super + a + h     -> Hide Polybar
-super + a + s     -> Show Polybar
-super + a + r     -> Restart Polybar
+ctrl + shift + h     -> Hide Polybar
+ctrl + shift + s     -> Show Polybar
+ctrl + shift + r     -> Restart Polybar
 
 # System controls
 super + ctrl + shift + q -> Quit bspwm

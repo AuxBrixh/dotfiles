@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+
+if bspc query -N -n .fullscreen > /dev/null; then
+    bspc node -t tiled
+else
+    bspc node -t fullscreen
+fi

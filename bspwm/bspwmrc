@@ -20,6 +20,11 @@ dunst &
 # Configure bspwm behavior
 bspc monitor -d 1 2 3 4 5
 
+# bspwm config
+bspc config pointer_action1 move
+bspc config pointer_action2 resize_side
+bspc config pointer_action3 resize_corner
+
 # detect full screen
 bspc subscribe node | while read -r event; do
     if [[ "$event" =~ "fullscreen" ]]; then

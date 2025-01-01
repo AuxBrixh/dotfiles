@@ -6,25 +6,13 @@ super + {Return, b, e, d}
 super + q
     bspc node -c
 
-# Split window
-super + shift + {h,j,k,l}
-    bspc node -p {west,south,north,east}
-
-# Move window
-super + ctrl + {h,j,k,l}
-    bspc node -s {west,south,north,east}
-
-# Toggle floating mode
-super + space
-    bspc node -t floating
-
 # Switch workspace
-super + {1-9}
-    bspc desktop -f ^{1-9}
+super + {1-5}
+    bspc desktop -f ^{1-5}
 
 # Move window to workspace
-super + shift + {1-9}
-    bspc node -d ^{1-9}
+super + shift + {1-5}
+    bspc node -d ^{1-5}
 
 # Manage brightness
 super + {Right, Left}
@@ -37,7 +25,7 @@ super + ctrl + Return
     ~/.config/sxhkd/script/Volume --toggle
 
 # Polybar controls
-super + a + {h, s, r}
+ctrl + shift + {h, s, r}
     ~/.config/sxhkd/script/HideBar {-h,-s,-r}
 
 # System controls
@@ -50,16 +38,36 @@ super + ctrl + shift + s
 
 # Fullscreen
 super + f
-    bspc node -t fullscreen
+    ~/.config/sxhkd/script/screenChange
 
 # Focus window
-super + {h,j,k,l}
-    bspc node -f {west,south,north,east}
+super + {h,l,k,j}
+    #kanan kiri atas bawah
+    bspc node -f {west,east, south,north}
+
+# Split window
+super + shift + {h,l,k,j}
+    #kanan kiri atas bawah
+    bspc node -p {west,east, south,north}
+
+# Move window
+super + ctrl + {h,l,k,j}
+    #kanan kiri atas bawah
+    bspc node -s {west,east, south,north}
+
+# Toggle floating mode
+super + space
+    bspc node -t floating
 
 # Resize window
-super + alt + {h,j,k,l}
-    bspc node -z {20 0, 0 20, -20 0, 0 -20}
+super + alt + {h,l,k,j}
+    #kanan kiri atas bawah
+    bspc node -z {left -20 0, right 20 0, top 0 -20, bottom 0 20}
 
 # Toggle monocle mode
 super + m
     bspc desktop -l next
+
+# list shorcut 
+super + shift + /
+    ~/.config/sxhkd/script/ShorcutList
