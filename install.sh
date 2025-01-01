@@ -56,6 +56,8 @@ cp zsh/.zshrc $HOME/.zshrc
 echo "Memindahkan konfigurasi LightDM..."
 sudo cp lightdm/lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf
 
+sudo cp lightdm/background_dark.jpg /usr/share/backgrounds/background_dark.jpg
+
 echo "Memindahkan file konfigurasi ke ~/.config..."
 mkdir -p $HOME/.config/alacritty
 cp alacritty/alacritty.conf $HOME/.config/alacritty/alacritty.yml
